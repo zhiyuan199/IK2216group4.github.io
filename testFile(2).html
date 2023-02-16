@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>REMEMBUY</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<style>
+	.ui-bar-c {
+		font:bold;
+		color: white;
+    background:linear-gradient(to right, #E2A918, #AFE1D2);
+    border-radius: 25px;
+     }
+
+     .ui-bar-f {
+		font:bold;
+		color: white;
+    background:linear-gradient(to right, #E2A918, #AFE1D2);
+     }
+
+     .ui-page-theme-d {
+     	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #8AC007;
+     }
+
+#Tool {
+	position: relative;
+	width: auto;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #E2A918;
+}
+
+#ToolList {
+    float: left;
+		width: 20%;
+		text-align: center;
+		line-height: 20px;
+		box-sizing: border-box;
+		cursor: pointer;
+		transition: all .3s;
+}
+
+#ToolList a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#ToolList a:hover {
+    background-color: #8BDFC6;}
+
+.active {
+    background-color: #8BDFC6;
+   }
+.img{
+	width: 75px;
+	height: 75px;
+}
+
+.img1po{
+   width: auto;
+   height: 500px;
+}
+
+.img1{
+	width: 100%;
+	height: 500px;
+	left: 30%;
+}
+
+.ui-bar-v {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted lightgrey;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: palegreen;
+    color: #00CC66;
+    text-align: center;
+    border-radius: 3px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -50%;
+    left: 50%;
+    margin-left: 50px;
+
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #AFE1D2;
+  color: white;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #AFE1D2;
+}
+
+</style>
+</head>
+<body>
+<div data-role="page" id="Bills" data-theme="a">
+			<div data-role="header" data-theme="f">
+				<!-- css -->
+				<h2 class="ui-btn-right">Expenditure</h2>
+				<form method="post" action="demoform.asp">
+					
+				  <fieldset class="ui-field-contain">
+				    <select name="day" id="mouth">
+				     <option value="mon">December</option>
+				     <option value="tue">November</option>
+				     <option value="wed">October</option>
+				     <option value="thu">September</option>
+				     <option value="fri">August</option>
+				     <option value="sat">July</option>
+				     <option value="sun">June</option>
+				     <option value="sun">May</option>
+				     <option value="sun">April</option>
+				     <option value="sun">March</option>
+				     <option value="sun">February</option>
+				     <option value="sun">January</option>
+				    </select>
+				  </fieldset>
+				</form>
+
+			</div>
+			<div role="main" class="ui-content">
+				<ul data-role="listview" data-theme="c">
+				  <li data-role="list-divider">25 Decemner
+				  	<p class="ui-li-aside">Total: -85kr </p></li>
+				  <li data-icon="false"><a href="#">
+				  	<img src="/icons/13.png" class="img">
+				  	<h2>Breakfast</h2>
+				  	<p class="ui-li-aside">-50kr </p></a></li>
+				  <li data-icon="false"><a href="#">
+				  	<img src="/icons/10.png" class="img">
+				  	<h2>Dinner</h2>
+				  	<p class="ui-li-aside">-35kr </p></a></li>
+				  <li data-role="list-divider">24 Decemner
+				  	<p class="ui-li-aside">Total: -50kr </p></li>
+				  <li data-icon="false"><a href="#">
+				  	<img src="/icons/13.png" class="img">
+				  	<h2>Breakfast</h2>
+				  	<p class="ui-li-aside">-20kr </p></a></li>
+				  <li data-icon="false"><a href="#">
+				  	<img src="/icons/10.png" class="img">
+				  	<h2>Dinner</h2>
+				  	<p class="ui-li-aside">-30kr </p></a></li>
+				  <li data-role="list-divider">23 Decemner
+				  	<p class="ui-li-aside">Total: -5kr </p></li>
+				  <li data-icon="false"><a href="#">
+				  	<img src="/icons/9.png" class="img">
+				  	<h2>Transport</h2>
+				  	<p class="ui-li-aside">-5kr </p></a></li>
+				</ul> 
+			</div>
+				<div data-role="footer" data-position="fixed">
+						<ul id="Tool">
+						<li id="ToolList"  class="active"><a href="#Bills">Bills</a></li>
+						<li id="ToolList"><a href="#Remembuy">ToBuy</a></li>
+						<li id="ToolList"><a href="#addItem">Add</a></li>
+						<li id="ToolList"><a href="#page3">Items</a></li>
+						<li id="ToolList"><a href="#page4">Setting</a></li>
+				</div>
+		</div>
+
+				<div data-role="page" id="Remembuy" data-theme="a">
+			<div data-role="header" data-theme="f">
+				<h1>REMEMBUY</h1>
+			</div>
+				<div role="main" class="ui-content">
+	                <ul data-role="listview" data-divider-theme="c">
+
+	                  <li data-role="list-divider">18 February
+	                    <p class="ui-li-aside" >Total: -335kr </p></li>
+	                  <li data-icon="false"><a href="#">
+	                    <img src="/icons/5.png">
+	                    <div class="tooltip">Dog Food
+							  <span class="tooltiptext">5kg</span>
+							</div>
+	                    <p class="ui-li-aside">-300kr </p></a></li>
+	                  <li data-icon="false"><a href="#">
+	                    <img src="/icons/9.png">
+	                    <div class="tooltip">Flour
+						  <span class="tooltiptext">2kg</span>
+						</div>
+	                    <p class="ui-li-aside">-35kr </p></a></li>
+
+	                  <li data-role="list-divider">25 February
+	                  <p class="ui-li-aside">Total: -80kr </p></li>
+	                  <li data-icon="false"><a href="#">
+	                    <img src="/icons/15.png">
+	                    <div class="tooltip">Fruit
+						  <span class="tooltiptext">3kg</span>
+						</div>
+	                    <p class="ui-li-aside">-45kr </p></a></li>
+	                  <li data-icon="false"><a href="#">
+	                    <img src="/icons/11.png">
+	                    <div class="tooltip">Cheese
+						  <span class="tooltiptext">1 piece</span>
+						</div>
+	                    <p class="ui-li-aside">-35kr </p></a></li>
+                </div>
+				<div data-role="footer" data-position="fixed">
+						<ul id="Tool">
+						<li id="ToolList"><a href="#Bills">Bills</a></li>
+						<li id="ToolList"  class="active"><a href="#Remembuy">ToBuy</a></li>
+						<li id="ToolList"><a href="#addItem">Add</a></li>
+						<li id="ToolList"><a href="#page3">Items</a></li>
+						<li id="ToolList"><a href="#page4">Setting</a></li>
+				</div>
+        </div>
+
+		<div data-role="page" id="page3" data-theme="a">
+			<div data-role="header" data-theme="f">
+				<h1>REMEMBUY</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<ul data-role="listview" data-theme="c">
+			      <li data-role="list-divider">
+
+			      Items Category</li>
+			      <li data-icon="false"><a href="#clothespage" class="ui-btn"><img src="/icons/2.png" class="img">Clothes</a></li>
+			      <li data-icon="false"><a href="#shoespage"><img src="/icons/4.png" class="img">Shoes</a></li>
+			      <li data-icon="false"><a href="#foodpage"><img src="/icons/16.png" class="img">Food</a></li>
+			      <li data-icon="false"><a href="#costimeticspage"><img src="/icons/3.png" class="img">Costimetics</a></li>
+			      <li data-role="list-divider">Analytics</li>
+			      <li data-icon="false"><a href="#">
+					<table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
+				      <thead>
+				        <tr>
+				          <th data-priority="1">Items</th>
+				          <th data-priority="2">Category</th>
+				          <th data-priority="3">Total</th>
+				        </tr>
+				      </thead>
+				      <tbody>
+				        <tr>
+				          <td>0</td>
+				          <td>4</td>
+				          <td>$ 0</td>
+				        </tr>
+				      </tbody>
+				    </table>
+			      </a></li>
+			      <li data-icon="false"><a href="#">I don't know how to draw the graph.</a></li>
+			    </ul>
+			</div>
+				<div data-role="footer" data-position="fixed">
+						<ul id="Tool">
+						<li id="ToolList"><a href="#Bills">Bills</a></li>
+						<li id="ToolList"><a href="#Remembuy">ToBuy</a></li>
+						<li id="ToolList"><a href="#addItem">Add</a></li>
+						<li id="ToolList" class="active"><a href="#page3">Items</a></li>
+						<li id="ToolList"><a href="#page4">Setting</a></li>
+				</div>
+		</div>
+		      <div data-role="page" id="page4" data-theme="a">
+				<div data-role="panel" id="LanguagePage"> 
+					<form method="post" action="demoform.asp">
+				  <fieldset class="ui-field-contain">
+				    <select name="language" id="language">
+				     <option value="mon">English</option>
+				     <option value="tue">Svenska</option>
+				    </select>
+				  </fieldset>
+				</form>
+				</div> 
+				<div data-role="panel" id="ItemUIPage"> 
+					<form method="post" action="demoform.asp">
+				  <fieldset class="ui-field-contain">
+				    <select name="itemui" id="itemui">
+				     <option value="mon">Open</option>
+				     <option value="tue">Close</option>
+				    </select>
+				  </fieldset>
+				</form>
+				</div> 
+				<div data-role="panel" id="DefaultSortPage"> 
+					<form method="post" action="demoform.asp">
+				  <fieldset class="ui-field-contain">
+				    <select name="defaultsort" id="defaultsort">
+				     <option value="mon">High to Low(price)</option>
+				     <option value="tue">Low to High(price)</option>
+				     <option value="mon">High to Low(date)</option>
+				     <option value="tue">Low to High(date)</option>
+				    </select>
+				  </fieldset>
+				</form>
+				</div> 
+				<div data-role="panel" id="Category" >
+					<ul data-role="listview">
+				      <li data-icon="false"><a href="#">Clothes</a></li>
+				      <li data-icon="false"><a href="#">Shoes</a></li>
+				      <li data-icon="false"><a href="#">Food</a></li>
+				      <li data-icon="false"><a href="#">Cosmetics</a></li>
+				    </ul> 
+					<div data-role="main" class="ui-content">
+					    <form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">       
+					         <input type="New Category" name="New Category" id="New Category" placeholder="Put in new category...">
+					      </div>
+					      <input type="submit" data-inline="true" value="Submit">
+					    </form>
+					  </div>
+				</div> 
+				<div data-role="panel" id="Notification">
+					<form method="post" action="demoform.php">
+				        <input type="checkbox" data-role="flipswitch" name="switch" id="switch">
+				        <br>
+				    </form> 
+					<form method="post" action="demoform.asp">
+				  <fieldset class="ui-field-contain">
+				    <select name="notification" id="notification">
+				     <option value="mon">Daily</option>
+				     <option value="tue">Weekly</option>
+				     <option value="tue">Monthly</option>
+				    </select>
+				  </fieldset>
+				</form>
+				</div> 
+				<div data-role="panel" id="Sound"> 
+					<form method="post" action="demoform.asp">
+				      <label for="points">Sound:</label>
+				      <input type="range" name="points" id="points" value="50" min="0" max="100" data-highlight="true">
+				      <input type="submit" data-inline="true" value="Yes">
+				    </form>
+				</div> 
+				<div data-role="panel" id="General"> 
+					<h2>General Information-GROUP 4</h2>
+					<p>SUYI WU suyiw@kth.se</p>
+					<p>SHUANGJIE LIU</p>
+					<p>YIWEN LIU</p>
+					<p>ZHIYUAN LIN</p>
+				</div> 
+				<div data-role="panel" id="Status"> 
+					<p>Web App Prototype</p>
+				</div> 
+			<div data-role="header"data-theme="f">
+				<h1>Settings</h1>
+			</div>
+			<div role="main" class="ui-content">
+				<ul data-role="listview">
+				  <li data-icon="false"><a href="#">
+				  	<h2>User name</h2>
+				  	<p>KTH Student</p>
+				  	</a></li>
+				  <li data-role="list-divider">
+				  	</li>
+				  <li data-icon="false"><a href="#LanguagePage">
+				  	<h2>Language</h2>
+				  	</a></li>
+				  <li data-icon="false"><a href="#ItemUIPage">
+				  	<h2>Item UI</h2>
+				  	</a></li>
+				  <li data-icon="false"><a href="#DefaultSortPage">
+				  	<h2>Default Sort</h2>
+				  	</a></li>
+				  <li data-icon="false"><a href="#Category">
+				  	<h2>Category</h2>
+				  	</a></li>
+				  <li data-role="list-divider">
+				  	</li>
+				  <li data-icon="false"><a href="#Notification">
+				  	<h2>Notification</h2>
+				  	</a></li>
+				  <li data-icon="false"><a href="#Sound">
+				  	<h2>Sound</h2>
+				  	</a></li>
+				  <li data-role="list-divider">
+				  	</li>
+				  <li data-icon="false"><a href="#General">
+				  	<h2>General</h2>
+				  	</a></li>
+				  <li data-icon="false"><a href="#Status">
+				  	<h2>Status</h2>
+				  	</a></li>
+				</ul> 
+			</div>
+				<div data-role="footer" data-position="fixed">
+						<ul id="Tool">
+						<li id="ToolList"><a href="#Bills">Bills</a></li>
+						<li id="ToolList"><a href="#Remembuy">ToBuy</a></li>
+						<li id="ToolList"><a href="#addItem">Add</a></li>
+						<li id="ToolList"><a href="#page3">Items</a></li>
+						<li id="ToolList" class="active"><a href="#page4">Setting</a></li>
+				</div>
+		</div>
+
+			<div data-role="page" id="costimeticspage">
+			  <div data-role="header" data-theme="f">
+			    <h1>Food</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			    <p>Please record your costimetics</p>
+			    <a href="#page3" data-role="button">Return</a>
+			  </div>
+			</div> 
+
+			<div data-role="page" id="foodpage">
+			  <div data-role="header" data-theme="f">
+			    <h1>Food</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			    <p>Please record your food</p>
+			    <a href="#page3" data-role="button">Return</a>
+			  </div>
+			</div> 
+
+			<div data-role="page" id="shoespage">
+			  <div data-role="header" data-theme="f">
+			    <h1>Shoes</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			    <p>Please record your shoes</p>
+			    <a href="#page3" data-role="button">Return</a>
+			  </div>
+			</div> 
+
+			<div data-role="page" id="clothespage">
+			  <div data-role="header" data-theme="f">
+			    <h1>Clothes</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			  	<ul data-role="listview">
+			      <li data-icon="false"><a href="#clothes1" class="ui-btn"><img src="/icons/20.png" class="img">Red Jacket</a></li>
+			    </ul>
+			    <p>Please record your clothes</p>
+			    <a href="#page3" data-role="button">Return</a>
+			  </div>
+			</div> 
+
+			<div data-role="page" id="clothes1">
+			  <div data-role="header" data-theme="f">
+			    <h1>Clothes</h1>
+			  </div>
+
+			  <div data-role="main" class="ui-content">
+			  	<div class="img1po">
+			  		<img src="/icons/20.png" class="img1">
+			  	</div>
+			  	<ul data-role="listview">
+			      <li data-icon="false"><a href="#" class="ui-btn">Name: Red Jacket</a></li>
+			      <li data-icon="false"><a href="#" class="ui-btn">Price: 300kr</a></li>
+			      <li data-icon="false"><a href="#" class="ui-btn">Date: 16 February 2023</a></li>
+			      <li data-icon="false"><a href="#" class="ui-btn">Category: Clothes</a></li>
+			      <li data-role="list-divider">
+			      <li data-icon="false"><a href="#" class="ui-btn">Brand: XXXXX</a></li>
+			      <li data-icon="false"><a href="#" class="ui-btn">Source: Internet</a></li>
+			      <li data-icon="false"><a href="#" class="ui-btn">Note: A red jacket</a></li>
+			      <li data-role="list-divider">
+			    </ul>
+			    <a href="#clothespage" data-role="button">Return</a>
+			  </div>
+			</div> 
+
+	
+	<div data-role="page" id="addItem" data-theme="a">
+				<div data-role="header" data-theme="f">
+					<h1>ADD ITEMS</h1>
+				</div>
+				<div role="main" class="ui-content">
+					<ul data-role="listview">
+				      <li data-icon="false"><a href="#">
+						<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					        <label for="fullname">Item Name</label>
+					        <input type="text" name="fullname" id="fullname">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+				      	<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					        <label for="price">Price</label>
+					        <input type="text" name="price" id="price">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+				      	<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					      	<label for="adddate">Date</label>
+					        <input type="text" name="adddate" id="adddate">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+					    <form method="post" action="demoform.asp">
+					      <fieldset data-role="fieldcontain">
+					        <label for="addcategory">Category</label>
+					        <select name="addcategory" id="addcategory">
+					         <option value="mon">Clothes</option>
+					         <option value="tue">Shoes</option>
+					         <option value="wed">Food</option>
+					         <option value="thu">Costimetics</option>
+					        </select>
+					      </fieldset>
+					    </form>
+				      </a></li>
+				      <li data-icon="false" class="input1"><a href="#">
+				      	<input type="submit" data-inline="true" value="Put In Bill">
+				      </a></li>
+				      <li data-role="list-divider"></li>
+				      <li data-icon="false"><a href="#">
+				      	<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					      	<label for="brand">Brand</label>
+					        <input type="text" name="brand" id="brand">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+				      	<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					      	<label for="source">Source</label>
+					        <input type="text" name="source" id="source">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+						<form method="post" action="demo_form.php">
+					      <div class="ui-field-contain">
+					      	<label for="source">Note</label>
+					        <input type="text" name="source" id="source">
+					       </div>
+					    </form>
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+				      	<input type="submit" data-inline="true" value="Put In Item">
+				      </a></li>
+				      <li data-icon="false"><a href="#">
+				      	<input type="submit" data-inline="true" value="Put In Remembuy">
+				      </a></li>
+				    </ul>
+				</div>
+				<div data-role="footer" data-position="fixed">
+						<ul id="Tool">
+						<li id="ToolList"><a href="#Bills">Bills</a></li>
+						<li id="ToolList"><a href="#Remembuy">ToBuy</a></li>
+						<li id="ToolList" class="active"><a href="#addItem">Add</a></li>
+						<li id="ToolList"><a href="#page3">Items</a></li>
+						<li id="ToolList"><a href="#page4">Setting</a></li>
+				</div>
+			</div>
+
+</body>
+</html>
